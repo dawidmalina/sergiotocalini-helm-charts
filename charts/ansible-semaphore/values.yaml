@@ -27,11 +27,14 @@ image:
 #     TEST: true
 #   secrets:
 #     FOO: "supersecret"
+#   existingSecrets:
+#     - my-external-secret
+#     - another-existing-secret
 
 volumeMountsPath:
   configmaps: /configmaps
   secrets: /secrets
-  
+
 # volumeMounts:
 #   configmaps:
 #     config.yaml: |
@@ -49,7 +52,6 @@ volumeMountsPath:
 #   DATABASE_PATH: "/var/lib/semaphore/database.boltdb"
 #   DATABASE_PORT: null
 #   DATABASE_USERNAME: "semaphore"
-
 
 imagePullSecrets: []
 nameOverride: ""
@@ -120,7 +122,7 @@ autoscaling:
 
 test:
   enabled: false
-  
+
 nodeSelector: {}
 
 tolerations: []
