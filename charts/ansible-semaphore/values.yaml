@@ -27,9 +27,10 @@ image:
 #     TEST: true
 #   secrets:
 #     FOO: "supersecret"
-#   existingSecrets:
-#     - my-external-secret
-#     - another-existing-secret
+
+# existingSecrets:
+#   - my-external-secret
+#   - another-existing-secret
 
 volumeMountsPath:
   configmaps: /configmaps

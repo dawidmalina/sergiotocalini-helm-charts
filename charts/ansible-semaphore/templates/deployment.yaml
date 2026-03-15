@@ -63,7 +63,7 @@ spec:
           {{- end }}
           {{- end }}
           {{- if .Values.envFrom }}
-          {{- if or .Values.envFrom.configmaps .Values.envFrom.secrets .Values.envFrom.existingSecrets }}
+          {{- if or .Values.envFrom.configmaps .Values.envFrom.secrets .Values.existingSecrets }}
           envFrom:
             {{- if .Values.envFrom.configmaps }}
             - configMapRef:
@@ -73,7 +73,7 @@ spec:
             - secretRef:
                 name: {{ template "helmproj.fullname" . }}
             {{- end }}
-            {{- range .Values.envFrom.existingSecrets }}
+            {{- range .Values.existingSecrets }}
             - secretRef:
                 name: {{ . }}
             {{- end }}
